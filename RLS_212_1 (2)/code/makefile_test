@@ -1,0 +1,19 @@
+all: main_test
+main_test: reading_parser.o main.o eval_test.o coord_conv_test.o rls_utils.o rls_evaluator.o coordsystem.o points.o
+	g++ -w -o main_test reading_parser.o main.o eval_test.o coord_conv_test.o rls_utils.o rls_evaluator.o coordsystem.o points.o
+eval_test.o: eval_test.cpp
+	g++ -c eval_test.cpp
+main.o: main.cpp
+	g++ -c main.cpp
+coord_conv_test.o: coord_conv_test.cpp
+	g++ -c coord_conv_test.cpp
+rls_utils.o: rls_utils.cpp
+	g++ -c rls_utils.cpp
+rls_evaluator.o: rls_evaluator.cpp
+	g++ -c rls_evaluator.cpp
+coordsystem.o: coordsystem.cpp
+	g++ -c coordsystem.cpp
+points.o: points.cpp
+	g++ -c points.cpp
+reading_parser.o: reading_parser.cpp
+	g++ -c reading_parser.cpp
